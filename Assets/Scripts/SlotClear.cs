@@ -7,6 +7,7 @@ public class SlotClear : MonoBehaviour {
 
     private UnityAction clearListener;
     private UnityAction gameEndListener;
+    private bool destroyButton = true;
 
     void Awake()
     {
@@ -30,14 +31,25 @@ public class SlotClear : MonoBehaviour {
         EventManager.StopListening("gameOver", gameEndListener);
     }
 
+    public void clickedButton()
+    {
+        destroyButton = false;
+    }
+
     void clear()
     {
         EventManager.triggerEvent("nextTurn");
-        Destroy(gameObject);
+        if (destroyButton)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void gameEnd()
     {
-        Destroy(gameObject);
+        if (destroyButton)
+        {
+            Destroy(gameObject);
+        }
     }
 }
