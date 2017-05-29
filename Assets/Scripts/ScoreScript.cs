@@ -14,6 +14,8 @@ public class ScoreScript : MonoBehaviour {
     private UnityAction badScoreListener;
     private UnityAction restartListener;
 
+    public GameObject mama;
+
 
     void Awake()
     {
@@ -41,6 +43,7 @@ public class ScoreScript : MonoBehaviour {
 
     
     void Start () {
+        mama = GameObject.FindGameObjectWithTag("Mama");
         score = GetComponent<Text>();
         scoreNum = 0;
 	}
@@ -66,5 +69,12 @@ public class ScoreScript : MonoBehaviour {
         scoreNum -= 5;
         score.text = "lbs: " + scoreNum;
     }
-	
+
+
+    private void Update()
+    {
+        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.27f, scoreNum/ 2000f + 0.3f, 0);
+
+    }
+
 }
