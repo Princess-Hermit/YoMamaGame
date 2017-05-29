@@ -111,7 +111,6 @@ public class GameMod : MonoBehaviour {
                 badNum = 3;
                 instFood(greatNum, goodNum, badNum);
             }
-            print("turn: " + turn);
             turn++;
             
         }

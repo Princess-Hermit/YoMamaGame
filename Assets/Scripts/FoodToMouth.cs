@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FoodToMouth : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class FoodToMouth : MonoBehaviour {
     public float speed = 1f;
     private float fraction = 0;
     private bool move = false;
+
+    public Button button;
+    
 
     public void createDuplicate()
     {
@@ -18,7 +22,9 @@ public class FoodToMouth : MonoBehaviour {
     {
         if (move)
         {
-            if (fraction < 0.95)
+            button = gameObject.GetComponent<Button>();
+            button.interactable = false;
+            if (fraction < 1)
             {
                 fraction += Time.deltaTime * speed;
                 gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, mamaMouth, fraction);
