@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameMod : MonoBehaviour {
+public class GameMod2 : MonoBehaviour {
 
     private int turn;
     public bool nextTurn;
@@ -16,9 +16,8 @@ public class GameMod : MonoBehaviour {
     int greatFoodIndex;
     int goodFoodIndex;
     int badFoodIndex;
-    
-    Vector3 pos1 = new Vector3(120, 59);
-    Vector3 pos2 = new Vector3(240, 59);
+    Vector3 pos1 = new Vector3(240, 59);
+    Vector3 pos2 = new Vector3(120, 59);
     Vector3 pos3 = new Vector3(360, 59);
     Vector3 pos4 = new Vector3(480, 59);
 
@@ -77,7 +76,7 @@ public class GameMod : MonoBehaviour {
         if (nextTurn && !gameOver)
         {
             nextTurn = false;
-            if (turn <= 5)
+            if (turn <= 10)
             {
                 //easy
                 greatNum = 2;
@@ -86,7 +85,7 @@ public class GameMod : MonoBehaviour {
                 instFood(greatNum, goodNum, badNum);
             }
 
-            if (turn > 5 && turn <= 15)
+            if (turn > 10 && turn <= 30)
             {
                 //medium
                 greatNum = 1;
@@ -95,7 +94,7 @@ public class GameMod : MonoBehaviour {
                 instFood(greatNum, goodNum, badNum);
             }
 
-            if (turn > 15 && turn <= 30)
+            if (turn > 30 && turn <= 50)
             {
                 //hard
                 greatNum = 1;
@@ -104,7 +103,7 @@ public class GameMod : MonoBehaviour {
                 instFood(greatNum, goodNum, badNum);
             }
 
-            if(turn > 30)
+            if(turn > 50)
             {
                 //extreme
                 greatNum = 1;
