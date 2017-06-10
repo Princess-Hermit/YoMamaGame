@@ -20,9 +20,9 @@ public class AddHighScore : MonoBehaviour
 
 	private bool addedScore = false;
 
-	// Use this for initialization
 	void Start()
 	{
+		//Find the high scores script
 		highscoresManager = GetComponent<HighScores>();
 
 		//Store the final score into highscoreText
@@ -34,9 +34,22 @@ public class AddHighScore : MonoBehaviour
 
 	public void OnHighscoresDownloaded(Highscore[] highscoreList)
 	{
+		//Once the highscores downloaded, check if the user's score is on the leaderboard.
+		//If it is, set the inputWrapper object to active so the user can add their name to the leaderboard.
 		if (addedScore == false)
 		{
-			if (highscoreList.Length < tableSize || highscoreList [tableSize - 1].score < finalScore)
+			//Leaderboard 1 & 2
+			if(PlayerPrefs.GetInt ("leaderboardNum") != 3)
+			{
+				if (highscoreList.Length < tableSize || highscoreList [tableSize - 1].score < finalScore)
+				{
+					print ("TRUE");
+					highscoreText.text = "Score: " + finalScore + "\nYour on the Leaderboard!";
+					inputWrapper.SetActive (true);
+				}
+			}
+			//Leaderboard 3
+			else if (highscoreList.Length < tableSize || highscoreList [tableSize - 1].score > finalScore)
 			{
 				print ("TRUE");
 				highscoreText.text = "Score: " + finalScore + "\nYour on the Leaderboard!";
@@ -64,10 +77,8 @@ public class AddHighScore : MonoBehaviour
 	
 	IEnumerator RefreshHighscores()
 	{
-		if (true) //while true
-		{
-			highscoresManager.downloadHighscores();
-			yield return new WaitForSeconds(30);
-		}
+		//Only download the scores once.
+		highscoresManager.downloadHighscores();
+		yield return new WaitForSeconds(30);
 	}
 }

@@ -23,6 +23,7 @@ public class LB_GameController : MonoBehaviour {
         // final score in a PlayerPref so that the leaderboard script
         // can pick it up later
         PlayerPrefs.SetInt("finalScore", finalScore);
+		//PlayerPrefs.SetInt("leaderboardNum", 3);
 
         // load the leaderboard screen to submit the score
         SceneManager.LoadScene("AddNewHighScore");
@@ -30,6 +31,6 @@ public class LB_GameController : MonoBehaviour {
 
 	public void goToMainMenu()
 	{
-		SceneManager.LoadScene("MainMenu");
+		SceneManager.LoadScene("MainMenuProto");
 	}
 }
