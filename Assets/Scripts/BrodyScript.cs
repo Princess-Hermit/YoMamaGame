@@ -11,7 +11,6 @@ public class BrodyScript : MonoBehaviour {
     private UnityAction veryBadScoreListener;
 
     public Animator anim;
-    private float wait = 0.03f;
 
     void Awake()
     {
@@ -38,25 +37,6 @@ public class BrodyScript : MonoBehaviour {
         void Start()
     {
         anim = GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        
-        if (anim.GetBool("Throw") == true)
-        {
-            if (wait > 0)
-            {
-                wait -= Time.deltaTime;
-                return;
-            }
-            if (wait <= 0)
-            {
-                anim.SetBool("Throw", false);
-                wait = 0.03f;
-            }
-            
-        }
     }
 
     void brodyThrow()
