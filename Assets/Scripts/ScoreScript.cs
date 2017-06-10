@@ -13,6 +13,7 @@ public class ScoreScript : MonoBehaviour {
     private UnityAction greatScoreListener;
     private UnityAction goodScoreListener;
     private UnityAction badScoreListener;
+    private UnityAction veryBadScoreListener;
     private UnityAction restartListener;
     private UnityAction gameOverListener;
 
@@ -24,6 +25,7 @@ public class ScoreScript : MonoBehaviour {
         greatScoreListener = new UnityAction(greatScore);
         goodScoreListener = new UnityAction(goodScore);
         badScoreListener = new UnityAction(badScore);
+        veryBadScoreListener = new UnityAction(veryBadScore);
         restartListener = new UnityAction(restartGame);
         gameOverListener = new UnityAction(gameEnd);
     }
@@ -33,6 +35,7 @@ public class ScoreScript : MonoBehaviour {
         EventManager.StartListening("greatTrigger", greatScoreListener);
         EventManager.StartListening("goodTrigger", goodScoreListener);
         EventManager.StartListening("badTrigger", badScoreListener);
+        EventManager.StartListening("veryBadTrigger", veryBadScoreListener);
         EventManager.StartListening("restart", restartListener);
         EventManager.StartListening("gameOver", gameOverListener);
     }
@@ -42,6 +45,7 @@ public class ScoreScript : MonoBehaviour {
         EventManager.StopListening("greatTrigger", greatScoreListener);
         EventManager.StopListening("goodTrigger", goodScoreListener);
         EventManager.StopListening("badTrigger", badScoreListener);
+        EventManager.StopListening("veryBadTrigger", veryBadScoreListener);
         EventManager.StopListening("restart", restartListener);
         EventManager.StopListening("gameOver", gameOverListener);
     }
@@ -74,8 +78,13 @@ public class ScoreScript : MonoBehaviour {
         scoreNum -= 5;
         score.text = "lbs: " + scoreNum;
     }
+    void veryBadScore()
+    {
+        scoreNum -= 10;
+        score.text = "lbs: " + scoreNum;
+    }
 
-
+    // resize Mama
     private void Update()
     {
         mama.transform.localScale = new Vector3(scoreNum/2000f + 0.27f, scoreNum/ 2000f + 0.3f, 0);
