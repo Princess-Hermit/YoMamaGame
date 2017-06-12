@@ -17,6 +17,7 @@ public class FoodToMouth : MonoBehaviour {
 
     int i = 0;
     float moveTime = 0f;
+    float wait = 0.05f;
 
     public Button button;
 
@@ -36,8 +37,14 @@ public class FoodToMouth : MonoBehaviour {
     }
     private void Update()
     {
+        
         if (move)
         {
+            if (wait > 0)
+            {
+                wait -= Time.deltaTime;
+                return;
+            }
             button = gameObject.GetComponent<Button>();
             button.interactable = false;
             

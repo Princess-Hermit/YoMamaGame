@@ -10,16 +10,20 @@ public class GameMod2 : MonoBehaviour {
     public List<GameObject> greatFoodList = new List<GameObject>();
     public List<GameObject> goodFoodList = new List<GameObject>();
     public List<GameObject> badFoodList = new List<GameObject>();
+    public List<GameObject> veryBadFoodList = new List<GameObject>();
     private int greatNum;
     private int goodNum;
     private int badNum;
+    private int veryBadNum;
     int greatFoodIndex;
     int goodFoodIndex;
     int badFoodIndex;
-    Vector3 pos1 = new Vector3(240, 59);
-    Vector3 pos2 = new Vector3(120, 59);
-    Vector3 pos3 = new Vector3(360, 59);
-    Vector3 pos4 = new Vector3(480, 59);
+    int veryBadFoodIndex;
+
+    Vector3 pos1 = new Vector3(90, 70);
+    Vector3 pos2 = new Vector3(230, 70);
+    Vector3 pos3 = new Vector3(370, 70);
+    Vector3 pos4 = new Vector3(510, 70);
 
     public GameObject parent;
 
@@ -58,11 +62,12 @@ public class GameMod2 : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         if (start == true || restart == true)
         {
@@ -82,7 +87,8 @@ public class GameMod2 : MonoBehaviour {
                 greatNum = 2;
                 goodNum = 2;
                 badNum = 0;
-                instFood(greatNum, goodNum, badNum);
+                veryBadNum = 0;
+                instFood(greatNum, goodNum, badNum, veryBadNum);
             }
 
             if (turn > 10 && turn <= 30)
@@ -91,7 +97,8 @@ public class GameMod2 : MonoBehaviour {
                 greatNum = 1;
                 goodNum = 2;
                 badNum = 1;
-                instFood(greatNum, goodNum, badNum);
+                veryBadNum = 0;
+                instFood(greatNum, goodNum, badNum, veryBadNum);
             }
 
             if (turn > 30 && turn <= 50)
@@ -99,20 +106,22 @@ public class GameMod2 : MonoBehaviour {
                 //hard
                 greatNum = 1;
                 goodNum = 1;
-                badNum = 2;
-                instFood(greatNum, goodNum, badNum);
+                badNum = 1;
+                veryBadNum = 1;
+                instFood(greatNum, goodNum, badNum, veryBadNum);
             }
 
-            if(turn > 50)
+            if (turn > 50)
             {
                 //extreme
-                greatNum = 1;
-                goodNum = 0;
-                badNum = 3;
-                instFood(greatNum, goodNum, badNum);
+                greatNum = 0;
+                goodNum = 1;
+                badNum = 2;
+                veryBadNum = 1;
+                instFood(greatNum, goodNum, badNum, veryBadNum);
             }
             turn++;
-            
+
         }
     }
 
@@ -139,13 +148,14 @@ public class GameMod2 : MonoBehaviour {
         nextTurn = true;
     }
 
-    public void instFood(int great, int good, int bad)
+    public void instFood(int great, int good, int bad, int veryBad)
     {
         int[] choices = new int[4];
-        int[] foodTypes = new int[3];
+        int[] foodTypes = new int[4];
         foodTypes[0] = great;
         foodTypes[1] = good;
         foodTypes[2] = bad;
+        foodTypes[3] = veryBad;
         bool done = false;
 
         Vector3 pos = new Vector3(0, 0, 0);
@@ -164,7 +174,7 @@ public class GameMod2 : MonoBehaviour {
 
             while (done == false)
             {
-                choices[i] = UnityEngine.Random.Range(0, 3);
+                choices[i] = UnityEngine.Random.Range(0, 4);
                 if (foodTypes[0] != 0)
                 {
                     if (choices[i] == 0)
@@ -198,6 +208,17 @@ public class GameMod2 : MonoBehaviour {
                         done = true;
                     }
                 }
+                if (foodTypes[3] != 0)
+                {
+                    if (choices[i] == 3)
+                    {
+                        veryBadFoodIndex = UnityEngine.Random.Range(0, veryBadFoodList.Count - 1);
+                        Gvar.position = i;
+                        Instantiate(veryBadFoodList[veryBadFoodIndex], pos, Quaternion.identity, parent.transform);
+                        foodTypes[3] -= 1;
+                        done = true;
+                    }
+                }
             }
             done = false;
         }
@@ -205,5 +226,5 @@ public class GameMod2 : MonoBehaviour {
 
     }
 
-	
+
 }
