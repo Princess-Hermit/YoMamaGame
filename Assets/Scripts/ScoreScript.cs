@@ -18,6 +18,7 @@ public class ScoreScript : MonoBehaviour {
     private UnityAction gameOverListener;
 
     public GameObject mama;
+    public Animator anim;
 
 
     void Awake()
@@ -53,6 +54,7 @@ public class ScoreScript : MonoBehaviour {
     
     void Start () {
         mama = GameObject.FindGameObjectWithTag("Mama");
+        anim = mama.GetComponent<Animator>();
         score = GetComponent<Text>();
         scoreNum = 0;
 	}
@@ -67,27 +69,31 @@ public class ScoreScript : MonoBehaviour {
     {
         scoreNum += 15;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaHappy");
     }
     void goodScore()
     {
         scoreNum += 10;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaHappy");
     }
     void badScore()
     {
         scoreNum -= 5;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaSad");
     }
     void veryBadScore()
     {
         scoreNum -= 10;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaSad");
     }
 
     // resize Mama
     private void Update()
     {
-        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.27f, scoreNum/ 2000f + 0.3f, 0);
+        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.2f, scoreNum/ 2000f + 0.2f, 0);
     }
 
     void gameEnd()
