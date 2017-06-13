@@ -13,10 +13,12 @@ public class ScoreScript : MonoBehaviour {
     private UnityAction greatScoreListener;
     private UnityAction goodScoreListener;
     private UnityAction badScoreListener;
+    private UnityAction veryBadScoreListener;
     private UnityAction restartListener;
     private UnityAction gameOverListener;
 
     public GameObject mama;
+    public Animator anim;
 
 
     void Awake()
@@ -24,6 +26,7 @@ public class ScoreScript : MonoBehaviour {
         greatScoreListener = new UnityAction(greatScore);
         goodScoreListener = new UnityAction(goodScore);
         badScoreListener = new UnityAction(badScore);
+        veryBadScoreListener = new UnityAction(veryBadScore);
         restartListener = new UnityAction(restartGame);
         gameOverListener = new UnityAction(gameEnd);
     }
@@ -33,6 +36,7 @@ public class ScoreScript : MonoBehaviour {
         EventManager.StartListening("greatTrigger", greatScoreListener);
         EventManager.StartListening("goodTrigger", goodScoreListener);
         EventManager.StartListening("badTrigger", badScoreListener);
+        EventManager.StartListening("veryBadTrigger", veryBadScoreListener);
         EventManager.StartListening("restart", restartListener);
         EventManager.StartListening("gameOver", gameOverListener);
     }
@@ -42,6 +46,7 @@ public class ScoreScript : MonoBehaviour {
         EventManager.StopListening("greatTrigger", greatScoreListener);
         EventManager.StopListening("goodTrigger", goodScoreListener);
         EventManager.StopListening("badTrigger", badScoreListener);
+        EventManager.StopListening("veryBadTrigger", veryBadScoreListener);
         EventManager.StopListening("restart", restartListener);
         EventManager.StopListening("gameOver", gameOverListener);
     }
@@ -49,6 +54,7 @@ public class ScoreScript : MonoBehaviour {
     
     void Start () {
         mama = GameObject.FindGameObjectWithTag("Mama");
+        anim = mama.GetComponent<Animator>();
         score = GetComponent<Text>();
         scoreNum = 0;
 	}
@@ -63,22 +69,31 @@ public class ScoreScript : MonoBehaviour {
     {
         scoreNum += 15;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaHappy");
     }
     void goodScore()
     {
         scoreNum += 10;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaHappy");
     }
     void badScore()
     {
         scoreNum -= 5;
         score.text = "lbs: " + scoreNum;
+        anim.Play("MamaSad");
+    }
+    void veryBadScore()
+    {
+        scoreNum -= 10;
+        score.text = "lbs: " + scoreNum;
+        anim.Play("MamaSad");
     }
 
-
+    // resize Mama
     private void Update()
     {
-        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.27f, scoreNum/ 2000f + 0.3f, 0);
+        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.2f, scoreNum/ 2000f + 0.2f, 0);
     }
 
     void gameEnd()

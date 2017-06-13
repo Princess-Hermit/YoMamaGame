@@ -20,6 +20,7 @@ public class SlotClear : MonoBehaviour {
         EventManager.StartListening("greatTrigger", clearListener);
         EventManager.StartListening("goodTrigger", clearListener);
         EventManager.StartListening("badTrigger", clearListener);
+        EventManager.StartListening("veryBadTrigger", clearListener);
         EventManager.StartListening("gameOver", gameEndListener);
     }
 
@@ -28,6 +29,7 @@ public class SlotClear : MonoBehaviour {
         EventManager.StopListening("greatTrigger", clearListener);
         EventManager.StopListening("goodTrigger", clearListener);
         EventManager.StopListening("badTrigger", clearListener);
+        EventManager.StopListening("veryBadTrigger", clearListener);
         EventManager.StopListening("gameOver", gameEndListener);
     }
 

@@ -13,6 +13,7 @@ public class ScoreScript2 : MonoBehaviour {
     private UnityAction greatScoreListener;
     private UnityAction goodScoreListener;
     private UnityAction badScoreListener;
+    private UnityAction veryBadScoreListener;
     private UnityAction restartListener;
 
     public GameObject mama;
@@ -23,6 +24,7 @@ public class ScoreScript2 : MonoBehaviour {
         greatScoreListener = new UnityAction(greatScore);
         goodScoreListener = new UnityAction(goodScore);
         badScoreListener = new UnityAction(badScore);
+        veryBadScoreListener = new UnityAction(veryBadScore);
         restartListener = new UnityAction(restartGame);
     }
 
@@ -31,6 +33,7 @@ public class ScoreScript2 : MonoBehaviour {
         EventManager.StartListening("greatTrigger", greatScoreListener);
         EventManager.StartListening("goodTrigger", goodScoreListener);
         EventManager.StartListening("badTrigger", badScoreListener);
+        EventManager.StartListening("veryBadTrigger", veryBadScoreListener);
         EventManager.StartListening("restart", restartListener);
     }
 
@@ -39,6 +42,7 @@ public class ScoreScript2 : MonoBehaviour {
         EventManager.StopListening("greatTrigger", greatScoreListener);
         EventManager.StopListening("goodTrigger", goodScoreListener);
         EventManager.StopListening("badTrigger", badScoreListener);
+        EventManager.StopListening("restart", restartListener);
         EventManager.StopListening("restart", restartListener);
     }
 
@@ -69,6 +73,11 @@ public class ScoreScript2 : MonoBehaviour {
     void badScore()
     {
         scoreNum -= 5;
+        score.text = "lbs goal: " + scoreGoal + System.Environment.NewLine + "lbs: " + scoreNum;
+    }
+    void veryBadScore()
+    {
+        scoreNum -= 10;
         score.text = "lbs goal: " + scoreGoal + System.Environment.NewLine + "lbs: " + scoreNum;
     }
 
