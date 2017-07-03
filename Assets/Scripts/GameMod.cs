@@ -11,6 +11,14 @@ public class GameMod : MonoBehaviour {
     public List<GameObject> goodFoodList = new List<GameObject>();
     public List<GameObject> badFoodList = new List<GameObject>();
     public List<GameObject> veryBadFoodList = new List<GameObject>();
+
+
+	public GameObject buttonPos01;
+	public GameObject buttonPos02;
+	public GameObject buttonPos03;
+	public GameObject buttonPos04;
+
+
     private int greatNum;
     private int goodNum;
     private int badNum;
@@ -20,7 +28,8 @@ public class GameMod : MonoBehaviour {
     int badFoodIndex;
     int veryBadFoodIndex;
     
-    Vector3 pos1 = new Vector3(90, 70);
+	//Vector3 pos1 = new Vector3(90, 70);
+	Vector3 pos1 = new Vector3(230, 70);
     Vector3 pos2 = new Vector3(230, 70);
     Vector3 pos3 = new Vector3(370, 70);
     Vector3 pos4 = new Vector3(510, 70);
@@ -42,6 +51,7 @@ public class GameMod : MonoBehaviour {
         startListener = new UnityAction(startGame);
         restartListener = new UnityAction(restartGame);
         gameEndListener = new UnityAction(gameEnd);
+
     }
 
     void OnEnable()
@@ -156,6 +166,12 @@ public class GameMod : MonoBehaviour {
         foodTypes[2] = bad;
         foodTypes[3] = veryBad;
         bool done = false;
+
+		//Set postions based on Launch postions.
+		pos1 = buttonPos01.transform.position;
+		pos2 = buttonPos02.transform.position;
+		pos3 = buttonPos03.transform.position;
+		pos4 = buttonPos04.transform.position;
 
         Vector3 pos = new Vector3(0, 0, 0);
 
