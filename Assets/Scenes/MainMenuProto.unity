@@ -1800,7 +1800,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1305040522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2304,6 +2304,7 @@ SpriteRenderer:
   m_Size: {x: 13.94, y: 3.96}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
 --- !u!1 &1552583196
 GameObject:
   m_ObjectHideFlags: 0

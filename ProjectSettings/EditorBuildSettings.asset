@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HighScoreTable.unity
     guid: aad97dd19e22243f28ffe4d35a5a3bda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ProtolevelBestTime.unity
     guid: 08dfd8c0adba9254a8da52291c9add4d
   - enabled: 1
