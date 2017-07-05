@@ -5,13 +5,10 @@ using UnityEngine.UI;
 
 public class FoodToMouth : MonoBehaviour {
 
-	private GameObject g_mouth; //= GameObject.Find ("MamaMouth");
-
-
+    private Vector3 mamaMouth = new Vector3(295f, 500.5f, 0);
     private float speed = 7f;
     private bool move = false;
     private int position;
-	private Vector3 mamaMouth;
     private Vector3 pos;
     private Vector3 arc1;
     private Vector3 arc2;
@@ -26,13 +23,11 @@ public class FoodToMouth : MonoBehaviour {
 
     private void Start()
     {
-		g_mouth = GameObject.Find ("MamaMouth");
-		mamaMouth = g_mouth.transform.position;
         position = gameObject.GetComponent<positionScript>().position;
-		arc1 = mamaMouth + new Vector3(-30f, 16f);
-		arc2 = mamaMouth + new Vector3(-15f, 16f);
-		arc3 = mamaMouth + new Vector3( 15f, 16f);
-		arc4 = mamaMouth + new Vector3( 30f, 16f);
+        arc1 = gameObject.transform.position + new Vector3(150f, 550f);
+        arc2 = gameObject.transform.position + new Vector3(50f, 550f);
+        arc3 = gameObject.transform.position + new Vector3(-50f, 550f);
+        arc4 = gameObject.transform.position + new Vector3(-150f, 550f);
         pos = gameObject.transform.position;
     }
 
@@ -165,6 +160,10 @@ public class FoodToMouth : MonoBehaviour {
                     Destroy(gameObject);
                 }
             }
+
+
+
+
 
         }
 
