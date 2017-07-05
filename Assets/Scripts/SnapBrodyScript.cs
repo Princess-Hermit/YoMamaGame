@@ -10,10 +10,10 @@ public class SnapBrodyScript : MonoBehaviour {
     {
         GameObject Brody = GameObject.FindGameObjectWithTag("Brody");
         buttonPosition = gameObject.transform.position;
-<<<<<<< HEAD
+
         Brody.transform.position = (buttonPosition + new Vector3(20f, 36f));
-=======
+
         Brody.transform.position = (buttonPosition + new Vector3(75f, -5f));
->>>>>>> origin/master
+
     }
 }
