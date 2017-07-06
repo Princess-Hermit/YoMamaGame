@@ -32,3 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AddNewHighScore.unity
     guid: c56ca80c13f7e4e57b1798d10a3f5673
+  - enabled: 1
+    path: Assets/Scenes/UnityAds.unity
+    guid: d33ba08b5feac4145b532c699585a8a8
