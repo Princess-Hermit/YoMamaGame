@@ -30,25 +30,25 @@ namespace Detox.Editor
       [MenuItem(MenuRoot + "uScript/uScript Editor %u", false, 1)]
       internal static void OpenEditor()
       {
-         EditorCommands.OpenEditorWindow();
+         //EditorCommands.OpenEditorWindow();
       }
 
       [MenuItem(MenuRoot + "uScript/Hotkeys", false, 54)]
       internal static void OpenHotkeysWindow()
       {
-         EditorCommands.OpenHotkeyWindow();
+         //EditorCommands.OpenHotkeyWindow();
       }
 
       [MenuItem(MenuRoot + "uScript/Rebuild All Graphs", false, 53)]
       internal static void RebuildAllGraphs()
       {
-         uScript.Instance.RebuildAllScripts();
+         //uScript.Instance.RebuildAllScripts();
       }
 
       [MenuItem(MenuRoot + "uScript/About uScript", false, 1001)]
       internal static void OpenAboutWindow()
       {
-         EditorCommands.OpenAboutWindow();
+         //EditorCommands.OpenAboutWindow();
       }
    }
 }
