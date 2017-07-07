@@ -178,7 +178,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 0)
                     {
-                        greatFoodIndex = UnityEngine.Random.Range(0, greatFoodList.Count - 1);
+                        greatFoodIndex = UnityEngine.Random.Range(0, greatFoodList.Count);
                         Gvar.position = i;
                         Instantiate(greatFoodList[greatFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[0] -= 1;
@@ -189,7 +189,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 1)
                     {
-                        goodFoodIndex = UnityEngine.Random.Range(0, goodFoodList.Count - 1);
+                        goodFoodIndex = UnityEngine.Random.Range(0, goodFoodList.Count);
                         Gvar.position = i;
                         Instantiate(goodFoodList[goodFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[1] -= 1;
@@ -200,7 +200,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 2)
                     {
-                        badFoodIndex = UnityEngine.Random.Range(0, badFoodList.Count - 1);
+                        badFoodIndex = UnityEngine.Random.Range(0, badFoodList.Count);
                         Gvar.position = i;
                         Instantiate(badFoodList[badFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[2] -= 1;
@@ -211,7 +211,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 3)
                     {
-                        veryBadFoodIndex = UnityEngine.Random.Range(0, veryBadFoodList.Count - 1);
+                        veryBadFoodIndex = UnityEngine.Random.Range(0, veryBadFoodList.Count);
                         Gvar.position = i;
                         Instantiate(veryBadFoodList[veryBadFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[3] -= 1;
