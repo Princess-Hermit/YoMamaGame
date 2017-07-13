@@ -19,11 +19,14 @@ public class GameMod : MonoBehaviour {
     int goodFoodIndex;
     int badFoodIndex;
     int veryBadFoodIndex;
+
+    public static int sWidth;
+    public static int sHeight;
     
-    Vector3 pos1 = new Vector3(90, 70);
-    Vector3 pos2 = new Vector3(230, 70);
-    Vector3 pos3 = new Vector3(370, 70);
-    Vector3 pos4 = new Vector3(510, 70);
+    Vector3 pos1;
+    Vector3 pos2;
+    Vector3 pos3;
+    Vector3 pos4;
 
     public GameObject parent;
 
@@ -62,7 +65,9 @@ public class GameMod : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+        sWidth = Screen.width;
+        sHeight = Screen.height;
+        positionMod(sWidth, sHeight);
     }
 
     // Update is called once per frame
@@ -145,6 +150,17 @@ public class GameMod : MonoBehaviour {
     public void changeTurn()
     {
         nextTurn = true;
+    }
+
+    public void positionMod(int sWidth, int sHieght)
+    {
+        float equalDist = sWidth / 5f;
+// Food Height
+        float foodHeight = sHeight / 10f;
+        pos1 = new Vector3(equalDist, foodHeight);
+        pos2 = new Vector3(equalDist*2, foodHeight);
+        pos3 = new Vector3(equalDist*3, foodHeight);
+        pos4 = new Vector3(equalDist*4, foodHeight);
     }
 
     public void instFood(int great, int good, int bad, int veryBad)
