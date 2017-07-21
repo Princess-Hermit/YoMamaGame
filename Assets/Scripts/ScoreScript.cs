@@ -93,7 +93,7 @@ public class ScoreScript : MonoBehaviour {
     // resize Mama
     private void Update()
     {
-        mama.transform.localScale = new Vector3(scoreNum/2000f + 0.2f, scoreNum/ 2000f + 0.2f, 0);
+        mama.transform.localScale = new Vector3(scoreNum/500f + 3f, scoreNum/ 550f + 2f, 0);
     }
 
     void gameEnd()

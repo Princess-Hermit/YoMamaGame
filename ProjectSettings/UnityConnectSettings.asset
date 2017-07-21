@@ -26,7 +26,7 @@ UnityConnectSettings:
     m_InitializeOnStartup: 1
     m_TestMode: 1
     m_EnabledPlatforms: 4294967295
-    m_IosGameId: 1472019
-    m_AndroidGameId: 1472018
+    m_IosGameId: 
+    m_AndroidGameId: 
   PerformanceReportingSettings:
     m_Enabled: 0
