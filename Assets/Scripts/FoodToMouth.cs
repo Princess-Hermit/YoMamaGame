@@ -83,6 +83,20 @@ public class FoodToMouth : MonoBehaviour {
                 }
                 if (i == 2)
                 {
+					switch(gameObject.name.Substring(gameObject.name.Length-10)){
+						case "(+)(Clone)":
+							EventManager.triggerEvent ("goodFoodEatenTrigger");
+							break;
+						case "++)(Clone)":
+							EventManager.triggerEvent ("vGoodFoodEatenTrigger");
+							break;
+						case "(-)(Clone)":
+							EventManager.triggerEvent ("badFoodEatenTrigger");
+							break;
+						case "--)(Clone)":
+							EventManager.triggerEvent ("vBadFoodEatenTrigger");
+							break;
+					}
                     Destroy(gameObject);
                 }
             }
@@ -111,6 +125,20 @@ public class FoodToMouth : MonoBehaviour {
                 }
                 if (i == 2)
                 {
+					switch(gameObject.name.Substring(gameObject.name.Length-10)){
+						case "(+)(Clone)":
+							EventManager.triggerEvent ("goodFoodEatenTrigger");
+							break;
+						case "++)(Clone)":
+							EventManager.triggerEvent ("vGoodFoodEatenTrigger");
+							break;
+						case "(-)(Clone)":
+							EventManager.triggerEvent ("badFoodEatenTrigger");
+							break;
+						case "--)(Clone)":
+							EventManager.triggerEvent ("vBadFoodEatenTrigger");
+							break;
+					}
                     Destroy(gameObject);
                 }
             }
@@ -139,6 +167,20 @@ public class FoodToMouth : MonoBehaviour {
                 }
                 if (i == 2)
                 {
+					switch(gameObject.name.Substring(gameObject.name.Length-10)){
+						case "(+)(Clone)":
+							EventManager.triggerEvent ("goodFoodEatenTrigger");
+							break;
+						case "++)(Clone)":
+							EventManager.triggerEvent ("vGoodFoodEatenTrigger");
+							break;
+						case "(-)(Clone)":
+							EventManager.triggerEvent ("badFoodEatenTrigger");
+							break;
+						case "--)(Clone)":
+							EventManager.triggerEvent ("vBadFoodEatenTrigger");
+							break;
+					}
                     Destroy(gameObject);
                 }
             }
@@ -167,6 +209,20 @@ public class FoodToMouth : MonoBehaviour {
                 }
                 if (i == 2)
                 {
+					switch(gameObject.name.Substring(gameObject.name.Length-10)){
+						case "(+)(Clone)":
+							EventManager.triggerEvent ("goodFoodEatenTrigger");
+							break;
+						case "++)(Clone)":
+							EventManager.triggerEvent ("vGoodFoodEatenTrigger");
+							break;
+						case "(-)(Clone)":
+							EventManager.triggerEvent ("badFoodEatenTrigger");
+							break;
+						case "--)(Clone)":
+							EventManager.triggerEvent ("vBadFoodEatenTrigger");
+							break;
+					}
                     Destroy(gameObject);
                 }
             }
