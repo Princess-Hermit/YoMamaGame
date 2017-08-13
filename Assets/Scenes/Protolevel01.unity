@@ -2153,6 +2153,8 @@ GameObject:
   - component: {fileID: 1601593038}
   - component: {fileID: 1601593037}
   - component: {fileID: 1601593040}
+  - component: {fileID: 1601593042}
+  - component: {fileID: 1601593041}
   m_Layer: 5
   m_Name: yoMama
   m_TagString: Mama
@@ -2239,6 +2241,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c0400b5a5ca2154aa6c9881ff5319ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1601593041
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601593035}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1601593042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1601593035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fadb9d4767030e4fa60b28190f82648, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodEat: {fileID: 8300000, guid: d3d6b876feada1c4ab545d4743a4be34, type: 3}
+  vGoodEat: {fileID: 8300000, guid: 11e9f1fbb4499264eb314d7a75754066, type: 3}
+  badEat: {fileID: 8300000, guid: 98eb798c37074a84e8e892ca61e9dd93, type: 3}
+  vBadEat: {fileID: 8300000, guid: e5bab092c950f8146854d2bfc5a0e342, type: 3}
+  throwSound: {fileID: 8300000, guid: c1c39e359f7b59643be26c4e6e7be121, type: 3}
+  throwSound2: {fileID: 8300000, guid: fa3d7716c783a114b91b0c3a1e0fe6d2, type: 3}
+  throwSound3: {fileID: 8300000, guid: 4f6a368a0e10b01498af58379ef6fdcc, type: 3}
+  throwSound4: {fileID: 8300000, guid: 93bc3da1fd28f7f4282da548dd0aa94e, type: 3}
 --- !u!1 &1680755919
 GameObject:
   m_ObjectHideFlags: 0
