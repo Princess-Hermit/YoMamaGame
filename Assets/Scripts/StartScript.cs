@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class StartScript : MonoBehaviour {
-
+	public GameObject needTokensPanel;
     /*
     private UnityAction turnListener;
     private UnityAction startListener;
@@ -36,8 +36,15 @@ public class StartScript : MonoBehaviour {
 
     public void startGame()
     {
-        EventManager.triggerEvent("start");
-        gameObject.SetActive(false);
+		if (TokenManager.tokenManager.tokens >= 5) {
+			TokenManager.tokenManager.tokens -= 5;
+			EventManager.triggerEvent ("start");
+			gameObject.SetActive (false);
+		} else if (TokenManager.tokenManager.tokens < 5) {
+			gameObject.SetActive (false);
+			needTokensPanel.SetActive (true);
+		}
+			
     }
 
 	

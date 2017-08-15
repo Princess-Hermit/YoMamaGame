@@ -32,3 +32,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/uScript/uScriptRuntime.meta
+Assets/uScript/uScriptRuntime.meta
