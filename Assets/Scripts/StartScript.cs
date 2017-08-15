@@ -36,8 +36,8 @@ public class StartScript : MonoBehaviour {
 
     public void startGame()
     {
-		if (TokenManager.tokenManager.tokens >= 5) {
-			TokenManager.tokenManager.tokens -= 5;
+		if (TokenManager.tokenManager.tokens >= TokenManager.tokenManager.getTokensRequired()) {
+			TokenManager.tokenManager.tokens -= TokenManager.tokenManager.getTokensRequired();
 			EventManager.triggerEvent ("start");
 			gameObject.SetActive (false);
 		} else if (TokenManager.tokenManager.tokens < 5) {

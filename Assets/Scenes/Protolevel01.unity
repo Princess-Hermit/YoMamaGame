@@ -2582,7 +2582,7 @@ Prefab:
     - target: {fileID: 114563420294749290, guid: b557a1541fb1eb5429a4ec5deac7cb95,
         type: 2}
       propertyPath: tokens
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b557a1541fb1eb5429a4ec5deac7cb95, type: 2}
@@ -3250,6 +3250,7 @@ GameObject:
   - component: {fileID: 2035647306}
   - component: {fileID: 2035647309}
   - component: {fileID: 2035647310}
+  - component: {fileID: 2035647311}
   m_Layer: 5
   m_Name: WatchAdButton
   m_TagString: Untagged
@@ -3315,24 +3316,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2035647309}
-        m_MethodName: addTokens
+      - m_Target: {fileID: 2035647311}
+        m_MethodName: ShowRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2035647310}
-        m_MethodName: LoadByIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3392,5 +3382,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c16ea598248c6f47b6e24d459fb912b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2035647311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2035647304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4808515153f5c43b7d8c643cc537e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

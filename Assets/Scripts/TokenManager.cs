@@ -10,9 +10,13 @@ public class TokenManager : MonoBehaviour {
 	//static reference so it can be referenced from other classes easily
 	public static TokenManager tokenManager;
 
-	public float defautTimeTillNext = 120f;
+	// these values can be adjusted to fine-tune how generous or shrewd we are with free tokens
+	private static int numTokensRequired = 5;
+	private float defautTimeTillNext = 120f;
+	private int maxTokens = 30;
+
+
 	public float timeTillNextToken;
-	public int maxTokens = 30;
 	public int tokens;
 	public DateTime mostRecentTime;
 
@@ -44,7 +48,11 @@ public class TokenManager : MonoBehaviour {
 	// displays token number. REPLACE WITH GUI ELEMENT 
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 100, 30), "Tokens: " + tokens);
-		GUI.Label (new Rect (110, 10, 100, 30), "Next token:" + (int)(timeTillNextToken / 60) + ":" + ((int)(timeTillNextToken)%60).ToString("00"));
+		if (tokens < maxTokens) {
+			GUI.Label (new Rect (110, 10, 100, 30), "Next token:" + (int)(timeTillNextToken / 60) + ": " + ((int)(timeTillNextToken) % 60).ToString ("00"));
+		} else if (tokens >= maxTokens) {
+			GUI.Label (new Rect (110, 10, 100, 30), "Next token:" + " MAX");
+		}
 	}
 
 	// called when application gains or loses focus
@@ -107,6 +115,17 @@ public class TokenManager : MonoBehaviour {
 			}
 
 		}
+	}
+
+	// getters for private fields that we don't want other classes modifying
+	public int getTokensRequired(){
+		return numTokensRequired;
+	}
+	public float getDefaultTime(){
+		return defautTimeTillNext;
+	}
+	public int getMaxTokens(){
+		return maxTokens;
 	}
 }
 
