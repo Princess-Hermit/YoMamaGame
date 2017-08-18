@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114394067840974514}
   - component: {fileID: 114637338137680442}
   - component: {fileID: 114418594390489076}
+  - component: {fileID: 114784633627777838}
   m_Layer: 5
   m_Name: Carrot(-)
   m_TagString: Untagged
@@ -251,8 +252,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 114784633627777838}
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114784633627777838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1134459932665258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1567864a91feb46ad5326519291f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAdd: {fileID: 1780817335681664, guid: 5056d89e4398a7c4aa4370b73ded1175, type: 2}
+  Parent: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!222 &222092566528780734
 CanvasRenderer:
   m_ObjectHideFlags: 1

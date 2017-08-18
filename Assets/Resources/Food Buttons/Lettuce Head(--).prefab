@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114205577029157396}
   - component: {fileID: 114513508857114180}
   - component: {fileID: 114699086692143660}
+  - component: {fileID: 114043437913739408}
   m_Layer: 5
   m_Name: Lettuce Head(--)
   m_TagString: Untagged
@@ -51,6 +52,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114043437913739408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1673329052687774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1567864a91feb46ad5326519291f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAdd: {fileID: 1780817335681664, guid: 5056d89e4398a7c4aa4370b73ded1175, type: 2}
+  Parent: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &114158800325059616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -197,6 +212,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114158800325059616}
         m_MethodName: veryBadTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114043437913739408}
+        m_MethodName: AddScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

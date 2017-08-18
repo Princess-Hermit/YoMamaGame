@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114946659468413884}
   - component: {fileID: 114958570354707044}
   - component: {fileID: 114863530977451434}
+  - component: {fileID: 114937461019508736}
   m_Layer: 5
   m_Name: Broccoli Shake(-)
   m_TagString: Untagged
@@ -228,8 +229,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 114937461019508736}
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114937461019508736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1852855483988090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1567864a91feb46ad5326519291f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAdd: {fileID: 1780817335681664, guid: 5056d89e4398a7c4aa4370b73ded1175, type: 2}
+  Parent: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &114946659468413884
 MonoBehaviour:
   m_ObjectHideFlags: 1
