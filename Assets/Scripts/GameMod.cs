@@ -19,11 +19,14 @@ public class GameMod : MonoBehaviour {
     int goodFoodIndex;
     int badFoodIndex;
     int veryBadFoodIndex;
+
+    public static int sWidth;
+    public static int sHeight;
     
-    Vector3 pos1 = new Vector3(90, 70);
-    Vector3 pos2 = new Vector3(230, 70);
-    Vector3 pos3 = new Vector3(370, 70);
-    Vector3 pos4 = new Vector3(510, 70);
+    Vector3 pos1;
+    Vector3 pos2;
+    Vector3 pos3;
+    Vector3 pos4;
 
     public GameObject parent;
 
@@ -62,7 +65,9 @@ public class GameMod : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        
+        sWidth = Screen.width;
+        sHeight = Screen.height;
+        positionMod(sWidth, sHeight);
     }
 
     // Update is called once per frame
@@ -147,6 +152,17 @@ public class GameMod : MonoBehaviour {
         nextTurn = true;
     }
 
+    public void positionMod(int sWidth, int sHieght)
+    {
+        float equalDist = sWidth / 5f;
+// Food Height
+        float foodHeight = sHeight / 10f;
+        pos1 = new Vector3(equalDist, foodHeight);
+        pos2 = new Vector3(equalDist*2, foodHeight);
+        pos3 = new Vector3(equalDist*3, foodHeight);
+        pos4 = new Vector3(equalDist*4, foodHeight);
+    }
+
     public void instFood(int great, int good, int bad, int veryBad)
     {
         int[] choices = new int[4];
@@ -178,7 +194,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 0)
                     {
-                        greatFoodIndex = UnityEngine.Random.Range(0, greatFoodList.Count - 1);
+                        greatFoodIndex = UnityEngine.Random.Range(0, greatFoodList.Count);
                         Gvar.position = i;
                         Instantiate(greatFoodList[greatFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[0] -= 1;
@@ -189,7 +205,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 1)
                     {
-                        goodFoodIndex = UnityEngine.Random.Range(0, goodFoodList.Count - 1);
+                        goodFoodIndex = UnityEngine.Random.Range(0, goodFoodList.Count);
                         Gvar.position = i;
                         Instantiate(goodFoodList[goodFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[1] -= 1;
@@ -200,7 +216,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 2)
                     {
-                        badFoodIndex = UnityEngine.Random.Range(0, badFoodList.Count - 1);
+                        badFoodIndex = UnityEngine.Random.Range(0, badFoodList.Count);
                         Gvar.position = i;
                         Instantiate(badFoodList[badFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[2] -= 1;
@@ -211,7 +227,7 @@ public class GameMod : MonoBehaviour {
                 {
                     if (choices[i] == 3)
                     {
-                        veryBadFoodIndex = UnityEngine.Random.Range(0, veryBadFoodList.Count - 1);
+                        veryBadFoodIndex = UnityEngine.Random.Range(0, veryBadFoodList.Count);
                         Gvar.position = i;
                         Instantiate(veryBadFoodList[veryBadFoodIndex], pos, Quaternion.identity, parent.transform);
                         foodTypes[3] -= 1;
