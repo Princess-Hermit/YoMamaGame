@@ -9,7 +9,7 @@ public class ScoreScript : MonoBehaviour {
 
     private Text score;
     private int scoreNum;
-
+    
     private UnityAction greatScoreListener;
     private UnityAction goodScoreListener;
     private UnityAction badScoreListener;
@@ -51,13 +51,15 @@ public class ScoreScript : MonoBehaviour {
         EventManager.StopListening("gameOver", gameOverListener);
     }
 
-    
-    void Start () {
+
+    void Start() {
         mama = GameObject.FindGameObjectWithTag("Mama");
         anim = mama.GetComponent<Animator>();
         score = GetComponent<Text>();
         scoreNum = 0;
-	}
+
+        
+    }
 
     void restartGame()
     {
@@ -65,35 +67,39 @@ public class ScoreScript : MonoBehaviour {
         score.text = "lbs: " + scoreNum;
     }
 
-	void greatScore()
+    void greatScore()
     {
         scoreNum += 15;
         score.text = "lbs: " + scoreNum;
         anim.Play("MamaHappy");
+        EventManager.triggerEvent("greatScoreAdd");
     }
     void goodScore()
-    {
+    { 
         scoreNum += 10;
         score.text = "lbs: " + scoreNum;
         anim.Play("MamaHappy");
+        EventManager.triggerEvent("goodScoreAdd");
     }
     void badScore()
     {
         scoreNum -= 5;
         score.text = "lbs: " + scoreNum;
         anim.Play("MamaSad");
+        EventManager.triggerEvent("badScoreAdd");
     }
     void veryBadScore()
     {
         scoreNum -= 10;
         score.text = "lbs: " + scoreNum;
         anim.Play("MamaSad");
+        EventManager.triggerEvent("veryBadScoreAdd");
     }
 
     // resize Mama
     private void Update()
     {
-        mama.transform.localScale = new Vector3(scoreNum/500f + 3f, scoreNum/ 550f + 2f, 0);
+        mama.transform.localScale = new Vector3(scoreNum/500f + 4f, scoreNum/ 550f + 3f, 0);
     }
 
     void gameEnd()

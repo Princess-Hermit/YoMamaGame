@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114776742205608118}
   - component: {fileID: 114973454113150688}
   - component: {fileID: 114404305073208818}
+  - component: {fileID: 114695557647603266}
   m_Layer: 5
   m_Name: Burger(++)
   m_TagString: Untagged
@@ -134,6 +135,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 114695557647603266}
+        m_MethodName: AddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114404305073208818
@@ -159,6 +171,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06de6bd5b96d16e41a22abcd1b23756c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114695557647603266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1794663266194702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1567864a91feb46ad5326519291f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAdd: {fileID: 1780817335681664, guid: 5056d89e4398a7c4aa4370b73ded1175, type: 2}
+  Parent: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &114729669681950472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -291,7 +317,7 @@ RectTransform:
   m_GameObject: {fileID: 1794663266194702}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 224619932851944500}
   m_Father: {fileID: 0}

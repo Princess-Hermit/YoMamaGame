@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114396641199519516}
   - component: {fileID: 114323929979154210}
   - component: {fileID: 114960399158981694}
+  - component: {fileID: 114393350295353310}
   m_Layer: 5
   m_Name: Vanilla Shake(+)
   m_TagString: Untagged
@@ -63,6 +64,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 0}
+--- !u!114 &114393350295353310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721477235096536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1567864a91feb46ad5326519291f6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreAdd: {fileID: 1780817335681664, guid: 5056d89e4398a7c4aa4370b73ded1175, type: 2}
+  Parent: {fileID: 0}
+  Score: {fileID: 0}
 --- !u!114 &114396641199519516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -148,6 +163,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 114474463098297318}
         m_MethodName: goodTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 114393350295353310}
+        m_MethodName: AddScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -273,7 +299,7 @@ RectTransform:
   m_GameObject: {fileID: 1721477235096536}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children:
   - {fileID: 224962551063523554}
   m_Father: {fileID: 0}

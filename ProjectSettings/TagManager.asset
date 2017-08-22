@@ -8,6 +8,8 @@ TagManager:
   - Mama
   - Food
   - MamaMouth
+  - Canvas
+  - Score
   layers:
   - Default
   - TransparentFX
