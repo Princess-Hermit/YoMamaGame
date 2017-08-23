@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class SoundScript : MonoBehaviour {
 
+	private float sfxVol;
+	private float musicVol;
+
 	public AudioClip goodEat;
 	public AudioClip vGoodEat;
 	public AudioClip badEat;
@@ -27,6 +30,9 @@ public class SoundScript : MonoBehaviour {
 
 	void Awake()
 	{
+		sfxVol = PlayerPrefs.GetFloat("SFX Volume");
+		musicVol = PlayerPrefs.GetFloat ("Music Volume");
+
 		//instantiates listeners
 		foodThrownListener = new UnityAction(foodThrown);
 
@@ -57,33 +63,33 @@ public class SoundScript : MonoBehaviour {
 		int soundToPlay = Random.Range (0, 4);
 		switch (soundToPlay) {
 			case 0:
-				source.PlayOneShot (throwSound);
+				source.PlayOneShot (throwSound, sfxVol);
 				break;
 			case 1:
-				source.PlayOneShot (throwSound2);
+				source.PlayOneShot (throwSound2, sfxVol);
 				break;
 			case 2:
-				source.PlayOneShot (throwSound3);
+				source.PlayOneShot (throwSound3, sfxVol);
 				break;
 			case 3:
-				source.PlayOneShot (throwSound4);
+				source.PlayOneShot (throwSound4, sfxVol);
 				break;
 			default:
-				source.PlayOneShot (throwSound);
+				source.PlayOneShot (throwSound, sfxVol);
 				break;
 		}
 	}
 
 	void goodFoodEaten(){
-		source.PlayOneShot (goodEat);
+		source.PlayOneShot (goodEat, sfxVol);
 	}
 	void vGoodFoodEaten(){
-		source.PlayOneShot (vGoodEat);
+		source.PlayOneShot (vGoodEat, sfxVol);
 	}
 	void badFoodEaten(){
-		source.PlayOneShot (badEat);
+		source.PlayOneShot (badEat, sfxVol);
 	}
 	void vBadFoodEaten(){
-		source.PlayOneShot (vBadEat);
+		source.PlayOneShot (vBadEat, sfxVol);
 	}
 }

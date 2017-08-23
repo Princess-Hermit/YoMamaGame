@@ -96,7 +96,6 @@ public class TokenManager : MonoBehaviour {
 			//calculates tokens given from time away
 			float diffInSeconds = (float)(DateTime.Now - mostRecentTime).TotalSeconds;
 			if (diffInSeconds > 0) {
-				Debug.Log (diffInSeconds);
 
 				float totalSeconds = timeTillNextToken + diffInSeconds;
 				if (tokens < maxTokens) {
