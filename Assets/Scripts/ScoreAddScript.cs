@@ -14,10 +14,12 @@ public class ScoreAddScript : MonoBehaviour {
     private Text addScore;
     private float moveTime;
     public GameObject Score;
+	public GameObject ScoreStart;
     private Vector3 scorePos;
+	private Vector3 scoreStartPos;
     private bool start = false;
 
-    private float speed = 2f;
+    private float speed = 4.0f;
 
     void Awake()
     {
@@ -47,15 +49,17 @@ public class ScoreAddScript : MonoBehaviour {
     {
         addScore = GetComponent<Text>();
         Score = GameObject.FindGameObjectWithTag("Score");
-        scorePos = Score.transform.position + new Vector3(200, 0, 0);
+		ScoreStart = GameObject.FindGameObjectWithTag("ScoreStart");
+		scorePos = Score.transform.position; //+ new Vector3(10, -10, 0);
+		scoreStartPos = ScoreStart.transform.position;
     }
     private void Update()
     {
         if (start == true)
         {
             moveTime += Time.deltaTime * speed;
-            gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, scorePos, moveTime);
-            if (Vector3.SqrMagnitude(gameObject.transform.position - scorePos) < 0.0001)
+			gameObject.transform.position = Vector3.Lerp(scoreStartPos, scorePos, moveTime);
+			if (Vector3.SqrMagnitude(gameObject.transform.position - scorePos) < 0.0001)
             {
                 Destroy(gameObject);
             }
@@ -102,7 +106,7 @@ public class ScoreAddScript : MonoBehaviour {
 
     public void addVeryBadScore()
     {
-        addScore.text = "-10";
+		addScore.text = "-10";
         addScore.color = Color.red;
         startAnim();
         EventManager.StopListening("greatScoreAdd", greatScoreAddListener);
@@ -112,3 +116,4 @@ public class ScoreAddScript : MonoBehaviour {
     }
 
 }
+

@@ -45,6 +45,7 @@ public class TokenManager : MonoBehaviour {
 
 	}
 
+/*
 	// displays token number. REPLACE WITH GUI ELEMENT 
 	void OnGUI(){
 		GUI.Label (new Rect (10, 10, 100, 30), "Tokens: " + tokens);
@@ -54,6 +55,8 @@ public class TokenManager : MonoBehaviour {
 			GUI.Label (new Rect (110, 10, 100, 30), "Next token:" + " MAX");
 		}
 	}
+*/
+
 
 	// called when application gains or loses focus
 	void OnApplicationFocus(bool hasFocus){

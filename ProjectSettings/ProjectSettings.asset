@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   productGUID: 3187fa83ab2ca044eb75370559a3f077
   AndroidProfiler: 0
   defaultScreenOrientation: 0
@@ -14,7 +14,7 @@ PlayerSettings:
   productName: Feed Fat Mama
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -70,6 +70,7 @@ PlayerSettings:
   captureSingleScreen: 0
   muteOtherAudioSources: 0
   Prepare IOS For Recording: 0
+  Force IOS Speakers When Recording: 0
   submitAnalytics: 1
   usePlayerLog: 1
   bakeCollisionMeshes: 0
@@ -101,6 +102,7 @@ PlayerSettings:
   xboxOneResolution: 0
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
+  xboxOneDisableEsram: 0
   videoMemoryForVertexBuffers: 0
   psp2PowerMode: 0
   psp2AcquireBGM: 1
@@ -119,7 +121,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.5
+  bundleVersion: 0.6
   preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -136,8 +138,10 @@ PlayerSettings:
       depthFormat: 1
   protectGraphicsMemory: 1
   useHDRDisplay: 0
+  targetPixelDensity: 0
+  resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.Company.ProductName
+    Android: com.PrincessHermit.FeedFatMama
     Standalone: unity.Princess Hermit.Feed Fat Mama
     Tizen: com.Company.ProductName
     iOS: com.Company.ProductName
@@ -219,7 +223,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: D:/GitProjects/YoMamaGame/AndBuild/FFM_01.keystore
-  AndroidKeyaliasName: 
+  AndroidKeyaliasName: ffm key
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -370,6 +374,9 @@ PlayerSettings:
   switchUdpSendBufferSize: 9
   switchUdpReceiveBufferSize: 42
   switchSocketBufferEfficiency: 4
+  switchSocketInitializeEnabled: 1
+  switchNetworkInterfaceManagerInitializeEnabled: 1
+  switchPlayerConnectionEnabled: 1
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -407,7 +414,6 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   ps4Passcode: frAQBc8Wsa1xVPfvJcrgRYwTiizs2trQ
-  ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -482,7 +488,7 @@ PlayerSettings:
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
   psp2InfoBarColor: 0
-  psp2UseDebugIl2cppLibs: 0
+  psp2ScriptOptimizationLevel: 0
   psmSplashimage: {fileID: 0}
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
@@ -499,11 +505,13 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLUseWasm: 0
   webGLCompressionFormat: 1
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    7: UNITY_ENABLED
   platformArchitecture: {}
   scriptingBackend: {}
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
@@ -620,7 +628,8 @@ PlayerSettings:
   facebookSdkVersion: 7.9.1
   apiCompatibilityLevel: 2
   cloudProjectId: e9e9f2f3-1136-474e-8d1f-b9ae7e4bade2
-  projectName: YoMaMa Proto
+  projectName: Feed Fat Mama
   organizationId: princesshermit
   cloudEnabled: 0
-  enableNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 0
+  disableOldInputManagerSupport: 0

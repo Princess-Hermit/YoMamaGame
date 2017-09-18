@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.SceneManagement;
-
+/*
 public class rewardAd : MonoBehaviour {
 	public void ShowRewardedAd(){
 		if (Advertisement.IsReady ("rewardedVideo")) {
@@ -11,6 +11,7 @@ public class rewardAd : MonoBehaviour {
 			Advertisement.Show ("rewardedVideo", options);
 		}
 	}
+
 
 	private void HandleShowResult(ShowResult result){
 		switch (result) {
@@ -29,3 +30,4 @@ public class rewardAd : MonoBehaviour {
 	}
 
 }
+*/

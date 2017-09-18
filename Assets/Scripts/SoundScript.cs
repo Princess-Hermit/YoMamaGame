@@ -18,6 +18,9 @@ public class SoundScript : MonoBehaviour {
 	public AudioClip throwSound3;
 	public AudioClip throwSound4;
 
+	public AudioClip musicTitleLoop;
+	public AudioSource musicPlayer;
+
 	//Declares listeners
 	private UnityAction foodThrownListener;
 

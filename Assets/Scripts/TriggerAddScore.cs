@@ -14,7 +14,7 @@ public class TriggerAddScore : MonoBehaviour {
     {
         Parent = GameObject.FindGameObjectWithTag("Canvas");
         Score = GameObject.FindGameObjectWithTag("Score");
-        spacer = new Vector3(200, -100, 0);
+        spacer = new Vector3(0, 0, 0);
         scorePos = Score.transform.position;
     }
 

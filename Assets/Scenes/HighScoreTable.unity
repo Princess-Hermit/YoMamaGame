@@ -42,7 +42,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -54,7 +54,7 @@ LightmapSettings:
     m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
-    serializedVersion: 8
+    serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
     m_TextureWidth: 1024
@@ -87,7 +87,7 @@ LightmapSettings:
     m_PVRFilteringAtrousNormalSigma: 1
     m_PVRFilteringAtrousPositionSigma: 1
   m_LightingDataAsset: {fileID: 0}
-  m_ShadowMaskMode: 2
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -578,46 +578,6 @@ Transform:
   m_Father: {fileID: 42715384}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &286653095
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 286653096}
-  - component: {fileID: 286653097}
-  m_Layer: 0
-  m_Name: Unity Ads
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &286653096
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 286653095}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5223074, y: 3.184589, z: -4.751512}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &286653097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 286653095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f96bf956225433cb7eb21711fa2e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &373860084
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +651,7 @@ GameObject:
   - component: {fileID: 401049072}
   - component: {fileID: 401049071}
   - component: {fileID: 401049070}
+  - component: {fileID: 401049073}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -756,7 +717,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 286653097}
+      - m_Target: {fileID: 0}
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -813,6 +774,24 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 401049068}
+--- !u!114 &401049073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401049068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3799cedaa81c6b24db2f011152ffb840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExposedVariables:
+    ButtonSFX:
+    - {fileID: 8300000, guid: b87cbab9513f20a46a755661adefc7d6, type: 3}
+    - {fileID: 8300000, guid: 3fdce3371c9347f46973390c6185822f, type: 3}
+    - {fileID: 8300000, guid: ffb7a83fc8e651b46bd667189c2da26e, type: 3}
+    - {fileID: 8300000, guid: 3ae2144fea963b04c8c3010b470a549a, type: 3}
+    - {fileID: 8300000, guid: 3d7d9020fd9a25543b40783209a2f661, type: 3}
 --- !u!1 &463784999
 GameObject:
   m_ObjectHideFlags: 0

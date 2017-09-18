@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2fadb9d4767030e4fa60b28190f82648
-timeCreated: 1503615143
+timeCreated: 1503679498
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
@@ -13,6 +13,8 @@ MonoImporter:
   - throwSound2: {fileID: 8300000, guid: fa3d7716c783a114b91b0c3a1e0fe6d2, type: 3}
   - throwSound3: {fileID: 8300000, guid: 4f6a368a0e10b01498af58379ef6fdcc, type: 3}
   - throwSound4: {fileID: 8300000, guid: 93bc3da1fd28f7f4282da548dd0aa94e, type: 3}
+  - musicTitleLoop: {fileID: 8300000, guid: 5c3e2a0c984f1d64697f832c01a0fcb1, type: 3}
+  - musicPlayer: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
